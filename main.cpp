@@ -11,9 +11,10 @@ using namespace imgPT;
 int main( int argc, char** argv )
 {
     Mat image;
-    image = imread( samples::findFile( "pool.jpg" ), IMREAD_COLOR ); // Read the file
+    image = imread( samples::findFile( "jul.jpg" ), IMREAD_GRAYSCALE ); // Read the file
     // image = threshold_greyscale(image, 75);
-    image = level_rgb(image, 1.0, 1.0, 0);
+    image = mirrorH_greyscale(image);
+    image = threshold_greyscale(image, 200);
     // std::cout << image.size << std::endl;
      
     namedWindow( "Display window", WINDOW_AUTOSIZE ); // Create a window for display.

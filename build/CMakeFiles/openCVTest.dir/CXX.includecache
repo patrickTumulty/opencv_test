@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/ptumulty/Developer/Projects/opencv_test/img_process.cpp
-opencv2/core.hpp
--
-opencv2/imgcodecs.hpp
--
-opencv2/highgui.hpp
--
-iostream
--
-img_process.hpp
-/Users/ptumulty/Developer/Projects/opencv_test/img_process.hpp
-
 /Users/ptumulty/Developer/Projects/opencv_test/img_process.hpp
 opencv2/core.hpp
 -
@@ -25,7 +13,11 @@ opencv2/imgcodecs.hpp
 -
 opencv2/highgui.hpp
 -
+complex
+-
 iostream
+-
+valarray
 -
 
 /Users/ptumulty/Developer/Projects/opencv_test/main.cpp

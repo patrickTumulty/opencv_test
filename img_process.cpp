@@ -88,3 +88,39 @@ Mat imgPT::level_rgb(Mat img, float Bmult, float Gmult, float Rmult)
     }
     return image;
 }
+
+Mat imgPT::mirrorV_greyscale(Mat img)
+{
+    Mat image = img;
+    for (int i = 0; i < image.rows; i++)
+        for (int j = 0; j < image.cols * 0.5; j++)
+            image.at<uchar>(i, j) = image.at<uchar>(i, image.cols - j);
+    return image;
+}
+
+Mat imgPT::mirrorV_rgb(Mat img)
+{
+    Mat image = img;
+    for (int i = 0; i < image.rows; i++)
+        for (int j = 0; j < image.cols * 0.5; j++)
+            image.at<Vec3b>(i, j) = image.at<Vec3b>(i, image.cols - j);
+    return image;
+}
+
+Mat imgPT::mirrorH_greyscale(Mat img)
+{
+    Mat image = img;
+    for (int i = 0; i < image.rows * 0.5; i++)
+        for (int j = 0; j < image.cols; j++)
+            image.at<uchar>(i, j) = image.at<uchar>(image.rows - i, j);
+    return image;
+}
+
+Mat imgPT::mirrorH_rgb(Mat img)
+{
+    Mat image = img;
+    for (int i = 0; i < image.rows * 0.5; i++)
+        for (int j = 0; j < image.cols; j++)
+            image.at<Vec3b>(i, j) = image.at<Vec3b>(image.rows - i, j);
+    return image;
+}
